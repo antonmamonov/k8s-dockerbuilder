@@ -21,6 +21,7 @@ sudo cp ./kubebuild /usr/local/bin/kubebuild
 kubebuild help
 
 # navigate to any local git repo and give the destination docker image tag as an argument (ie, hello/image:v0.0.1)
+# NOTE: The builder assumes a Dockerfile is present in the git's origin repository directory
 kubebuild build hello/image:v0.0.1
 
 # If successful you should see a 'dockerbuild' job in your cluster
