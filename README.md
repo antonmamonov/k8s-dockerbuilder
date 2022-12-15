@@ -11,10 +11,10 @@
 ## Quick run kubebuild CLI
 
 ```bash
-# build the cli for your environment
+# build the cli for your environment if needed
 go build -o kubebuild .
 
-# copy over to your system's build folder
+# copy over the executable to your system's bin folder
 sudo cp ./kubebuild /usr/local/bin/kubebuild
 
 # See all commands
