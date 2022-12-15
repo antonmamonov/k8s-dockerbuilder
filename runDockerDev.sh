@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGENAME=antonm/dockerbuilder:v0.0.1
+IMAGENAME=antonm/dockerbuilder
 CONTAINERNAME=dockerbuilder
 
 docker rm -f $CONTAINERNAME

@@ -22,7 +22,7 @@ cd /workspace
 
 # remove any previous git repos
 rm -fr /workspace/apptobuild
-git clone $GIT_PULL_REPO_URL apptobuild
+git clone $GIT_PULL_REPO_URL /workspace/apptobuild
 
 # if GIT_BRANCH exists then checkout that branch
 if [ -n "$GIT_BRANCH" ]; then
@@ -35,4 +35,5 @@ mkdir -p /root/.docker
 rm -fr /root/.docker/config.json
 echo $DOCKER_CONFIG_JSON > /root/.docker/config.json
 
-kaniko --dockerfile /workspace/apptobuild/Dockerfile --destination $DOCKER_IMAGE_DESTINATION
+cd /workspace/apptobuild
+kaniko --context /workspace/apptobuild --destination $DOCKER_IMAGE_DESTINATION

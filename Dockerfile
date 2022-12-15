@@ -33,3 +33,9 @@ RUN cd /app/kaniko && \
     make && \
     cp /app/kaniko/out/executor /usr/local/bin/kaniko
 RUN rm -rf /app/kaniko
+
+# copy over binutils
+COPY ./binutils ./binutils
+
+# copy over sample docker files
+COPY ./sampledockerfiles ./sampledockerfiles
