@@ -36,4 +36,7 @@ rm -fr /root/.docker/config.json
 echo $DOCKER_CONFIG_JSON > /root/.docker/config.json
 
 cd /workspace/apptobuild
-kaniko --context /workspace/apptobuild --destination $DOCKER_IMAGE_DESTINATION
+kaniko --context /workspace/apptobuild \
+    --single-snapshot \
+    --push-retry 7 \
+    --destination $DOCKER_IMAGE_DESTINATION
